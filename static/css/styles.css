@@ -1,0 +1,157 @@
+.list-group-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-group-item .d-flex {
+    flex-direction: row;
+    align-items: center;
+}
+
+.list-group-item img {
+    margin-left: 10px; /* Adjust the margin as needed */
+}
+
+.brand {
+  font-family: "Shadows Into Light", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body  {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.feature-icon {
+      width: 4rem;
+      height: 4rem;
+     border-radius: .75rem;
+  }
+
+.navbar_of_site {
+    background-color: #d6ad60 !important;
+}
+
+
+.footer-text
+{
+    color:black !important;
+}
+
+
+.btn-custom {
+
+    --bs-btn-color: black;
+    --bs-btn-bg: #d6ad60;
+    --bs-btn-border-color: #d6ad60;
+    --bs-btn-hover-color: black;
+    --bs-btn-hover-bg: #A58344;
+    --bs-btn-hover-border-color: #A58344;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #A58344;
+    --bs-btn-active-border-color: #A58344;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: black;
+    --bs-btn-disabled-bg: #FFCCB5;
+    --bs-btn-disabled-border-color: #d6ad60;
+
+}
+
+.text-custom {
+    --bs-text-opacity: 1;
+    color: #d6ad60 !important;
+}
+.bg-custom {
+    --bs-bg-opacity: 1;
+    background-color: #d6ad60 !important;
+    --bs-badge-color: black;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: -2rem;
+  width: 100%;
+  text-align: center;
+}
+header.masthead {
+    position: relative;
+    overflow: hidden;
+    padding-top: calc(7rem + 72px);
+    padding-bottom: 7rem;
+    background: linear-gradient(0deg, white 0%, #f4ebd0 100%);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+  header.masthead .masthead-content .masthead-heading {
+    font-size: 6rem;
+      color:black;
+  }
+  header.masthead .masthead-content .masthead-subheading {
+    font-size: 4rem;
+      color:black;
+
+  }
+  .mb-0 {
+  margin-bottom: 0 !important;
+}
+  header.masthead .masthead-content {
+  z-index: 1;
+  position: relative;
+}
+
+
+header.masthead .bg-butterfly {
+    z-index: 0;
+    position: absolute;
+}
+header.masthead .bg-butterfly-1 {
+  height: 45rem;
+  width: 45rem;
+  bottom: -13rem;
+  left: -3rem;
+}
+
+header.masthead .bg-butterfly-2 {
+
+    height: 25rem;
+    width: 40rem;
+    bottom: 15rem;
+    left: 51rem;
+}
+
+header.masthead .bg-butterfly-3 {
+
+    height: 12rem;
+    width: 43rem;
+    bottom: 24rem;
+    left: 4rem;
+
+}
+header.masthead .bg-butterfly-4 {
+
+    height: 45rem;
+    width: 45rem;
+    bottom: -17rem;
+    left: 87rem;
+
+}
+header.masthead .bg-butterfly-5 {
+
+        height: 12rem;
+    width: 12rem;
+    bottom: 1rem;
+    left: 57rem;
+}
+header.masthead .bg-butterfly-6 {
+
+   height: 68rem;
+    width: 28rem;
+    bottom: 1rem;
+    left: 100rem;
+}

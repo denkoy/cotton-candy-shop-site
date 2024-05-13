@@ -1,0 +1,64 @@
+{% include "base.html" %}
+
+
+<div class="container row justify-content-center " >
+{% for prod in products  %}
+    <div class="card m-3" style="width: 18rem;">
+    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <img src="{{ prod.photo_url }}" class="card-img-top" alt="photo of the products">
+    </a>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{prod.name}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="{{ prod.photo_url }}" class="img-fluid mx-auto d-block" alt="photo of the products">
+            </div>
+        </div>
+    </div>
+</div>
+
+  <div class="card-body">
+    <h5 class="card-title">{{ prod.name }}</h5>
+      <p class="card-text">{{ prod.description }}</p>
+    <h6 class="card-title">{{ prod.quantity_left }} pieces left</h6>
+    <h6 class="card-title">{{ prod.price }} BGN</h6>
+
+
+    {% if prod.name in basket and prod.quantity_left|int - basket[prod.name]['quantity_selected']|int<1 %}
+      <h5>NOT AVAILABLE</h5>
+    {% elif prod.quantity_left|int < 1 %}
+        <h5>NOT AVAILABLE</h5>
+    {% else %}
+     <form action="{{ url_for('add_to_database', name=prod.name) }}" method="POST">
+
+     <div class="form-group">
+    <label for="quantitySelect">Quantity</label>
+        <select class='mb-3' name="quantity" id="quantitySelect">
+            {% if prod.name in basket %}
+            {% for i in range(1, prod.quantity_left|int + 1 - basket[prod.name]['quantity_selected']|int) %}
+            <option value="{{ i }}">{{ i }}</option>
+            {% endfor %}
+            {% else %}
+            {% for i in range(1, prod.quantity_left|int + 1)%}
+            <option value="{{ i }}">{{ i }}</option>
+            {% endfor %}
+            {% endif %}
+        </select>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-custom">Add to basket</button>
+    </div>
+    </form>
+    {% endif %}
+  </div>
+</div>
+{% endfor %}
+</div>
+{% include "footer.html" %}
+

@@ -1,0 +1,27 @@
+{% include "base.html" %}
+
+{% if sent==1 %}
+<div class="container">
+<form class="mb-5" method="post" action="{{ url_for('validate_sms',code=code,time=moment_sent) }}">
+  <div class="form-group mb-3">
+    <label for="text">Phone number</label>
+    <input type="text" class="form-control" name="written_code" placeholder="123456" pattern="[0-9]{6}" title="Please enter exactly 6 numbers" required>
+  </div>
+    <a href="{{ url_for('send_sms') }}">receive new code.</a>
+    <button type="submit" class="btn btn-primary">Validate</button>
+</form>
+</div>
+
+
+{% else %}
+<div class="container">
+<form class="mb-5" method="post" action="{{ url_for('send_sms') }}">
+  <div class="form-group mb-3">
+    <label for="text">Phone number</label>
+    <input type="text" class="form-control" name="phone" placeholder="+359123456789" pattern="\+[0-9]+" required>
+  </div>
+    <button type="submit" class="btn btn-primary">Send sms</button>
+</form>
+</div>
+{% endif %}
+{% include "footer.html" %}
